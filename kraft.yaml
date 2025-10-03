@@ -14,72 +14,14 @@ unikraft:
     - CONFIG_LIBPOSIX_SYSINFO=y
     - CONFIG_LIBPOSIX_LIBDL=y
 targets:
-  - name: redis-qemu-x86_64-9pfs
-    architecture: x86_64
+  - architecture: x86_64
     platform: qemu
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_9PFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS="9pfs"
-      - CONFIG_LIBVFSCORE_ROOTDEV="fs1"
-  - name: redis-qemu-x86_64-initrd
-    architecture: x86_64
+  - architecture: arm64
     platform: qemu
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_INITRD=y
-      - CONFIG_LIBVFSCORE_ROOTFS="initrd"
-  - name: redis-qemu-arm64-9pfs
-    architecture: arm64
-    platform: qemu
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_ARCH_ARM_64=y
-      - CONFIG_MCPU_ARM64_NONE=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_9PFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS="9pfs"
-      - CONFIG_LIBVFSCORE_ROOTDEV="fs1"
-  - name: redis-qemu-arm64-initrd
-    architecture: arm64
-    platform: qemu
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_ARCH_ARM_64=y
-      - CONFIG_MCPU_ARM64_NONE=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_INITRD=y
-      - CONFIG_LIBVFSCORE_ROOTFS="initrd"
-  - name: redis-fc-x86_64-initrd
-    architecture: x86_64
+  - architecture: x86_64
     platform: fc
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_KVM_BOOT_PROTO_LXBOOT=y
-      - CONFIG_KVM_VMM_FIRECRACKER=y
-      - CONFIG_LIBVIRTIO_BUS=y
-      - CONFIG_LIBVIRTIO_MMIO=y
-      - CONFIG_LIBUKBUS=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_INITRD=y
-      - CONFIG_LIBVFSCORE_ROOTFS="initrd"
-  - name: redis-fc-arm64-initrd
-    architecture: arm64
+  - architecture: arm64
     platform: fc
-    kconfig:
-      - CONFIG_PLAT_KVM=y
-      - CONFIG_KVM_BOOT_PROTO_LXBOOT=y
-      - CONFIG_KVM_VMM_FIRECRACKER=y
-      - CONFIG_ARCH_ARM_64=y
-      - CONFIG_LIBVIRTIO_BUS=y
-      - CONFIG_LIBVIRTIO_MMIO=y
-      - CONFIG_LIBUKBUS=y
-      - CONFIG_MCPU_ARM64_NONE=y
-      - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
-      - CONFIG_LIBVFSCORE_ROOTFS_INITRD=y
-      - CONFIG_LIBVFSCORE_ROOTFS="initrd"
 libraries:
   musl:
     version: stable
